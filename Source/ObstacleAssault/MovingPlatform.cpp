@@ -19,7 +19,7 @@ void AMovingPlatform::BeginPlay()
 	// UE_LOG(LogTemp, Display, TEXT("Your message"));
 	// UE_LOG(LogTemp, Warning, TEXT("Your message"));
 	// UE_LOG(LogTemp, Error, TEXT("Your message"));
-	// UE_Log(LogTemp, Display, TEXT("Message %f"), MoveDistance)
+	// UE_Log(LogTemp, Display, TEXT("Message %f"), MoveDistance);
 	UE_LOG(LogTemp, Display, TEXT("Your message"));
 }
 
@@ -41,6 +41,8 @@ void AMovingPlatform::Tick(float DeltaTime)
 	// Reverse direction of motion if gone too far
 	if (distanceMoved > moveDistance)
 	{
+		float overShoot = distanceMoved - moveDistance;
+		UE_LOG(LogTemp, Display, TEXT("Platform Overshoot: %f"), overShoot);
 		FVector moveDirection = platformVelocity.GetSafeNormal();
 		startLocation = startLocation + moveDirection * moveDistance;
 		SetActorLocation(startLocation);
