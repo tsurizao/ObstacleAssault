@@ -17,6 +17,9 @@ void AMovingPlatform::BeginPlay()
 	startLocation = GetActorLocation();
 
 	// UE_LOG(LogTemp, Display, TEXT("Your message"));
+	// UE_LOG(LogTemp, Warning, TEXT("Your message"));
+	// UE_LOG(LogTemp, Error, TEXT("Your message"));
+	// UE_Log(LogTemp, Display, TEXT("Message %f"), MoveDistance)
 	UE_LOG(LogTemp, Display, TEXT("Your message"));
 }
 
